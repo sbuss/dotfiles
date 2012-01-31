@@ -1,0 +1,31 @@
+# make bash autocomplete with up arrow
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+alias cim='vim'
+
+alias go='open'
+
+alias sqlite='sqlite3'
+
+# This loads RVM into a shell session.
+[[ -s "/Users/steven/.rvm/scripts/rvm" ]] && source "/Users/steven/.rvm/scripts/rvm"
+
+# Git aliases
+alias gb="git branch"
+alias gs="git status"
+alias gc="git checkout"
+alias ga="git add"
+alias gl="git log"
+alias gp="git pull"
+alias gd="git diff"
+
+# Mysql config
+export PATH=$PATH:/usr/local/mysql/bin
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+# Python development
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+# Make pip always install files into the current virtualenv
+export PIP_RESPECT_VIRTUALENV=true
