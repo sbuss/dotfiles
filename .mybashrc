@@ -25,7 +25,7 @@ export PATH=$PATH:/usr/local/mysql/bin
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 # Python development
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=$HOME/envs
 source /usr/local/bin/virtualenvwrapper.sh
 # Make pip always install files into the current virtualenv
 export PIP_RESPECT_VIRTUALENV=true
