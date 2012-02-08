@@ -123,7 +123,7 @@ set ruler
 :match ErrorMsg '\%>74v.\+'
 
 " Always open nerdtree at the proj bookmark
-autocmd vimenter * NERDTree proj
+"autocmd vimenter * NERDTree proj
 
 " Close vim if the only open window is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
