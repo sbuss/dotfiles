@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-pep8'
 Bundle 'nvie/vim-pyflakes'
 Bundle 'garbas/vim-web-indent'
+Bundle 'vim-scripts/django.vim'
 
 filetype plugin indent on     " required! 
  "
