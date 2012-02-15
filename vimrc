@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-pep8'
 Bundle 'nvie/vim-pyflakes'
 Bundle 'garbas/vim-web-indent'
+Bundle 'kana/vim-arpeggio'
 
 filetype plugin indent on     " required! 
  "
@@ -123,7 +124,7 @@ set ruler
 :match ErrorMsg '\%>74v.\+'
 
 " Always open nerdtree at the proj bookmark
-autocmd vimenter * NERDTree proj
+"autocmd vimenter * NERDTree proj
 
 " Close vim if the only open window is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -136,3 +137,21 @@ set wildmenu
 
 " Store *.swp files in ~/.vim/swap. The // is to escape full file paths
 set directory=$HOME/.vim/swap//
+
+" Arpeggio 
+call arpeggio#load()
+Arpeggio inoremap jk <Esc>
+Arpeggio noremap jkl :NERDTreeToggle
+Arpeggio noremap jf :w
+" git status
+Arpeggio noremap gs :Gstatus 
+
+" persistent undo
+set undofile
+set undodir=$HOME/.vim/undo//
+
+let g:statline_syntastic = 0
+" see :h fugitive-statusline
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline+=%{SyntasticStatuslineFlag()}
+set laststatus=2 " always show the status line
