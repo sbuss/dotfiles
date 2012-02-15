@@ -103,3 +103,5 @@ if [ -f ~/.mybashrc ]; then
     . ~/.mybashrc
 fi
 
+
+[[ -s "/Users/sbuss/.rvm/scripts/rvm" ]] && source "/Users/sbuss/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
