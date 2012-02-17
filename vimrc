@@ -140,6 +140,11 @@ set wildmenu
 " Store *.swp files in ~/.vim/swap. The // is to escape full file paths
 set directory=$HOME/.vim/swap//
 
+" supertab
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
 " Arpeggio 
 call arpeggio#load()
 Arpeggio inoremap jk <Esc>
