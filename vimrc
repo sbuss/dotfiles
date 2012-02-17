@@ -148,10 +148,22 @@ set completeopt=menuone,longest,preview
 " Arpeggio 
 call arpeggio#load()
 Arpeggio inoremap jk <Esc>
-Arpeggio noremap jkl :NERDTreeToggle
-Arpeggio noremap jf :w
+Arpeggio noremap jkl :NERDTreeToggle<CR>
+Arpeggio noremap jf :w<CR>
+" Buffer movement
+Arpeggio noremap wq <C-w>q
+Arpeggio noremap wj <C-w>j
+Arpeggio noremap wk <C-w>k
+Arpeggio noremap wh <C-w>h
+Arpeggio noremap wl <C-w>l
+Arpeggio noremap ws <C-w>s
+Arpeggio noremap wv <C-w>v
 " git status
-Arpeggio noremap gs :Gstatus 
+Arpeggio noremap gs :Gstatus<CR>
+Arpeggio noremap gb :Gblame<CR>
+" ropevim code lookup
+Arpeggio noremap pj :RopeGotoDefinition<CR>
+Arpeggio noremap pr :RopeRename<CR>
 
 " persistent undo
 set undofile
