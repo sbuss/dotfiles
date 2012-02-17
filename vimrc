@@ -21,10 +21,11 @@ Bundle 'gmarik/vundle'
 " My bundles here
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-Bundle 'nvie/vim-pep8'
-Bundle 'nvie/vim-pyflakes'
+Bundle 'nvie/vim-flake8'
 Bundle 'garbas/vim-web-indent'
 Bundle 'kana/vim-arpeggio'
+Bundle 'ervandew/supertab'
+Bundle 'sontek/rope-vim'
 
 filetype plugin indent on     " required! 
  "
@@ -129,8 +130,9 @@ set ruler
 " Close vim if the only open window is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Auto-run pep8 on every write of a .py file
-autocmd BufWritePost *.py call Pep8()
+" Auto-run flake8 on every write of a .py file
+" flake8 runs pyflakes, pep8, and complexity checkers
+autocmd BufWritePost *.py call Flake8()
 
 " wildmenu shows menu suggestions
 set wildmenu
