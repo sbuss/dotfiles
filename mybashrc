@@ -8,6 +8,8 @@ alias go='open'
 
 alias sqlite='sqlite3'
 
+alias cw='cd ~/workspace'
+
 # This loads RVM into a shell session.
 [[ -s "/Users/steven/.rvm/scripts/rvm" ]] && source "/Users/steven/.rvm/scripts/rvm"
 
@@ -41,3 +43,5 @@ export PATH=$HOME/bin:$PATH
 
 # Make sure we're using Homebrew's python binary by default
 export PATH=/usr/local/bin:$PATH
+
+export PATH=/usr/local/lib/node_modules:$PATH
