@@ -130,7 +130,7 @@ highlight Comment term=NONE ctermfg=Cyan
 "autocmd vimenter * NERDTree proj
 
 " Close vim if the only open window is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Auto-run flake8 on every write of a .py file
 " flake8 runs pyflakes, pep8, and complexity checkers
