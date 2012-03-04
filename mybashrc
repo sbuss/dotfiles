@@ -20,6 +20,7 @@ alias gc="git checkout"
 alias ga="git add"
 alias gl="git log"
 alias gp="git pull"
+alias gpr="git pull --rebase"
 alias gd="git diff"
 
 # Mysql config
