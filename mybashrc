@@ -31,8 +31,11 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export PATH=/usr/local/share/python:$PATH
 export WORKON_HOME=$HOME/envs
 # Work and home have different paths
-if [ -f /usr/local/bin/virutalenvwrapper.sh ]; then
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
+fi
+if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
 fi
 # Make pip always install files into the current virtualenv
 export PIP_RESPECT_VIRTUALENV=true
