@@ -152,6 +152,7 @@ call arpeggio#load()
 Arpeggio inoremap jk <Esc>
 Arpeggio noremap jkl :NERDTreeToggle<CR>
 Arpeggio noremap jf :w<CR>
+Arpeggio noremap ls :ls<CR>
 " Buffer movement
 Arpeggio noremap wq <C-w>q
 Arpeggio noremap wj <C-w>j
@@ -160,6 +161,9 @@ Arpeggio noremap wh <C-w>h
 Arpeggio noremap wl <C-w>l
 Arpeggio noremap ws <C-w>s
 Arpeggio noremap wv <C-w>v
+" fast up & down
+Arpeggio noremap fd 10j
+Arpeggio noremap fu 10k
 " git status
 Arpeggio noremap gs :Gstatus<CR>
 Arpeggio noremap gb :Gblame<CR>
