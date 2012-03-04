@@ -21,11 +21,12 @@ Bundle 'gmarik/vundle'
 " My bundles here
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-Bundle 'nvie/vim-pep8'
-Bundle 'nvie/vim-pyflakes'
+Bundle 'nvie/vim-flake8'
 Bundle 'garbas/vim-web-indent'
 Bundle 'vim-scripts/django.vim'
+Bundle 'kana/vim-arpeggio'
 Bundle 'ervandew/supertab'
+Bundle 'sontek/rope-vim'
 
 filetype plugin indent on     " required! 
  "
@@ -121,20 +122,62 @@ map <A-j> yyP
 highlight Comment term=NONE ctermfg=Cyan
 
 " Highlight things longer than 74 characters
-set ruler
-:match ErrorMsg '\%>74v.\+'
+" This doesn't always work
+"set ruler
+":match ErrorMsg '\%>74v.\+'
+:set cc=78
 
 " Always open nerdtree at the proj bookmark
 "autocmd vimenter * NERDTree proj
 
 " Close vim if the only open window is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Auto-run pep8 on every write of a .py file
-autocmd BufWritePost *.py call Pep8()
+" Auto-run flake8 on every write of a .py file
+" flake8 runs pyflakes, pep8, and complexity checkers
+autocmd BufWritePost *.py call Flake8()
 
 " wildmenu shows menu suggestions
 set wildmenu
 
 " Store *.swp files in ~/.vim/swap. The // is to escape full file paths
 set directory=$HOME/.vim/swap//
+
+" supertab
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+" Arpeggio 
+call arpeggio#load()
+Arpeggio inoremap jk <Esc>
+Arpeggio noremap jkl :NERDTreeToggle<CR>
+Arpeggio noremap jf :w<CR>
+Arpeggio noremap ls :ls<CR>
+" Buffer movement
+Arpeggio noremap wq <C-w>q
+Arpeggio noremap wj <C-w>j
+Arpeggio noremap wk <C-w>k
+Arpeggio noremap wh <C-w>h
+Arpeggio noremap wl <C-w>l
+Arpeggio noremap ws <C-w>s
+Arpeggio noremap wv <C-w>v
+" fast up & down
+Arpeggio noremap fd 10j
+Arpeggio noremap fu 10k
+" git status
+Arpeggio noremap gs :Gstatus<CR>
+Arpeggio noremap gb :Gblame<CR>
+" ropevim code lookup
+Arpeggio noremap pj :RopeGotoDefinition<CR>
+Arpeggio noremap pr :RopeRename<CR>
+
+" persistent undo
+set undofile
+set undodir=$HOME/.vim/undo//
+
+let g:statline_syntastic = 0
+" see :h fugitive-statusline
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline+=%{SyntasticStatuslineFlag()}
+set laststatus=2 " always show the status line

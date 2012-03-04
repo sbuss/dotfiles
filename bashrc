@@ -102,4 +102,3 @@ fi
 if [ -f ~/.mybashrc ]; then
     . ~/.mybashrc
 fi
-
