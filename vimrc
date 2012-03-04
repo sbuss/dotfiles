@@ -121,8 +121,10 @@ map <A-j> yyP
 highlight Comment term=NONE ctermfg=Cyan
 
 " Highlight things longer than 74 characters
-set ruler
-:match ErrorMsg '\%>74v.\+'
+" This doesn't always work
+"set ruler
+":match ErrorMsg '\%>74v.\+'
+:set cc=78
 
 " Always open nerdtree at the proj bookmark
 "autocmd vimenter * NERDTree proj
