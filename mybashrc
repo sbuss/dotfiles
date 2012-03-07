@@ -31,6 +31,7 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 # Python development
 export PATH=/usr/local/share/python:$PATH
 export WORKON_HOME=$HOME/envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 # Work and home have different paths
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
