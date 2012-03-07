@@ -4,6 +4,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 set autoindent
+set guifont=Droid\ Sans\ Mono:h12
 
 set showmatch
 
