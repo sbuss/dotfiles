@@ -10,6 +10,9 @@ set showmatch
 
 set number
 
+" Code folding
+set foldmethod=indent
+
 " Vundle
 set nocompatible 
 filetype off                  " required!
@@ -21,6 +24,7 @@ Bundle 'gmarik/vundle'
 
 " My bundles here
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'garbas/vim-web-indent'
@@ -140,6 +144,10 @@ autocmd BufWritePost *.py call Flake8()
 
 " wildmenu shows menu suggestions
 set wildmenu
+set wildmode=longest:full
+set completeopt+=longest
+set wildignore+=*.pyc,*.git,*.o,*.class
+set wildignorecase
 
 " Store *.swp files in ~/.vim/swap. The // is to escape full file paths
 set directory=$HOME/.vim/swap//
@@ -177,7 +185,7 @@ Arpeggio noremap pr :RopeRename<CR>
 set undofile
 set undodir=$HOME/.vim/undo//
 
-let g:statline_syntastic = 0
+let g:statline_syntastic = 1
 " see :h fugitive-statusline
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "set statusline+=%{SyntasticStatuslineFlag()}
