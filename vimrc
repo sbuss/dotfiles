@@ -17,6 +17,7 @@ set foldmethod=indent
 set nocompatible 
 filetype off                  " required!
 set rtp+=~/.vim/bundle/vundle/
+"set rtp+=$GOROOT/misc/vim
 call vundle#rc()
 
 " Let vundle manage vundle
@@ -32,6 +33,7 @@ Bundle 'vim-scripts/django.vim'
 Bundle 'kana/vim-arpeggio'
 Bundle 'ervandew/supertab'
 Bundle 'sontek/rope-vim'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on     " required! 
  "
@@ -152,6 +154,7 @@ set wildignorecase
 " Store *.swp files in ~/.vim/swap. The // is to escape full file paths
 set directory=$HOME/.vim/swap//
 
+au BufRead,BufNewFile *.go set filetype=go
 " supertab
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
@@ -190,3 +193,8 @@ let g:statline_syntastic = 1
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "set statusline+=%{SyntasticStatuslineFlag()}
 set laststatus=2 " always show the status line
+
+" Go plugins
+"set rtp+=$GOROOT/misc/vim
+"filetype plugin indent on  " Already set above
+syntax on
