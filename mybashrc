@@ -52,5 +52,8 @@ export PATH=/usr/local/bin:$PATH
 
 export PATH=/usr/local/lib/node_modules:$PATH
 
+# ctags - perform this from project root
+alias tags="hash -r && ctags -R --python-kinds=-i ."
+
 # Go development
 export GOROOT=/usr/local/go
