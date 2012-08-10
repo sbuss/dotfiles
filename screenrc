@@ -1,0 +1,26 @@
+vbell off
+
+autodetach on # detach on hangup
+
+startup_message off # don't display copyright page
+
+#caption always
+#caption string '%-w%{bk}%n %t%{dd}%+w %=%H %0c'
+
+# setup the caption
+hardstatus alwayslastline '%{= yd}%{.kg}[ %{.kg}%H %{.kg}][%= %{kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][ %{Y}%l%{g} ][%{=b C} %m/%d %c %{g} ]%{W}'
+
+bindkey "^[[c" next
+bindkey "^[[d" prev
+bindkey "^[[b" focus
+
+altscreen on
+ignorecase on
+
+# terminfo and termcap for nice 256 color terminal
+# term screen-256color
+attrcolor b ".I" # allow bold colors
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' # set some colors
+defbce "off" # and erase with bg color
+
+defscrollback 10000
