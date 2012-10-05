@@ -201,3 +201,10 @@ syntax on
 autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
 Arpeggio noremap gd :Godoc<CR>
 Arpeggio noremap gf :Fmt<CR>
+
+function! Marked()
+    execute 'set filetype=markdown'
+    execute '!open -a Marked '.expand('%')
+endfunction
+
+Arpeggio noremap md :call Marked()<CR><CR>
