@@ -1,10 +1,10 @@
 syn on
-set tabstop=8
 set shiftwidth=4
-set expandtab
-set softtabstop=4
+set noexpandtab
 set autoindent
 set guifont=Droid\ Sans\ Mono:h12
+
+autocmd FileType python setlocal expandtab softtabstop=4 tabstop=8
 
 set showmatch
 
@@ -195,6 +195,9 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2 " always show the status line
 
 " Go plugins
-"set rtp+=$GOROOT/misc/vim
+set rtp+=$GOROOT/misc/vim
 "filetype plugin indent on  " Already set above
 syntax on
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
+Arpeggio noremap gd :Godoc<CR>
+Arpeggio noremap gf :Fmt<CR>
