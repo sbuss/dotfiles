@@ -208,3 +208,9 @@ function! Marked()
 endfunction
 
 Arpeggio noremap md :call Marked()<CR><CR>
+
+" Moving around long lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
