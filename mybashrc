@@ -57,3 +57,9 @@ alias tags="hash -r && ctags -R --python-kinds=-i ."
 
 # Go development
 export GOROOT=/usr/local/go
+export GOPATH=/Users/sbuss/gopkgs
+#alias gop="ln -s $1 $GOPATH/$2"
+addgopkg () {
+	ln -s $1 $GOPATH/src/$2
+}
+alias gop=addgopkg
