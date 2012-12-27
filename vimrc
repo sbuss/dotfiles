@@ -113,6 +113,8 @@ function SmartEnd(mode)
   return ""
 endfunction
 
+" Look for the tags file in a few directories up LOL
+set tags=./tags,../tags,../../tags,../../../tags,../../../../tags
 
 "wrap long lines and display them, even if they're longer than the 
 "available space on the screen
