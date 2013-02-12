@@ -164,6 +164,8 @@ set completeopt=menuone,longest,preview
 
 " Arpeggio 
 call arpeggio#load()
+" I'm too slow to hit j & f together, so lengthen the timeout on them
+let g:arpeggio_timeoutlens = {'j':100, 'f':100}
 Arpeggio inoremap jk <Esc>
 Arpeggio noremap jkl :NERDTreeToggle<CR>
 Arpeggio noremap jf :w<CR>
