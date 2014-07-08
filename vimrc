@@ -42,6 +42,9 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 
+" Puppet
+Bundle 'rodjek/vim-puppet'
+
 filetype plugin indent on     " required! 
  "
  " Brief help
