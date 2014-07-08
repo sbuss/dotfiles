@@ -2,6 +2,9 @@
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+# Git completion
+source ~/.git-completion.bash
+
 alias cim='vim'
 
 #alias go='open'
