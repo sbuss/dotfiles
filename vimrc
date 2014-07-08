@@ -45,6 +45,12 @@ Bundle 'godlygeek/tabular'
 " Puppet
 Bundle 'rodjek/vim-puppet'
 
+" clojure bundles
+Bundle 'tpope/vim-fireplace'
+Bundle 'guns/vim-clojure-static'
+Bundle 'amdt/vim-niji'
+Bundle 'paredit.vim'
+
 filetype plugin indent on     " required! 
  "
  " Brief help
