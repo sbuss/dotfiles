@@ -89,6 +89,9 @@ addgopkg () {
 }
 alias gop=addgopkg
 
+# Postgres recovery
+alias restartpostgres="rm /usr/local/var/postgres/postmaster.pid && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+
 
 # wrap_alias provides argument tab-completion in bash.
 # From http://stackoverflow.com/a/1793178
