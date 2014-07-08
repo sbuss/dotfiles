@@ -40,6 +40,7 @@ Bundle 'kana/vim-arpeggio'
 Bundle 'ervandew/supertab'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on     " required! 
  "
