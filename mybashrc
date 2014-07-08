@@ -15,7 +15,8 @@ alias cw='cd ~/workspace'
 
 # Find and delete all pyc files
 alias rmpyc='find . -name "*.pyc" -delete'
-alias pygrep='grep --include=*.py'
+alias pygrep='grep --include=*.py --exclude="*migrations*"'
+alias hgrep='grep --include=*.html'
 
 # This loads RVM into a shell session.
 [[ -s "/Users/steven/.rvm/scripts/rvm" ]] && source "/Users/steven/.rvm/scripts/rvm"
