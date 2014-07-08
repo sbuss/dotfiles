@@ -38,7 +38,6 @@ Bundle 'garbas/vim-web-indent'
 Bundle 'vim-scripts/django.vim'
 Bundle 'kana/vim-arpeggio'
 Bundle 'ervandew/supertab'
-Bundle 'sontek/rope-vim'
 Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on     " required! 
