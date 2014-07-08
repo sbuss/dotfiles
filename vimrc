@@ -39,6 +39,7 @@ Bundle 'vim-scripts/django.vim'
 Bundle 'kana/vim-arpeggio'
 Bundle 'ervandew/supertab'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on     " required! 
  "
