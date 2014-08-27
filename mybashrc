@@ -31,6 +31,7 @@ alias glm="gl master.."
 alias gp="git pull"
 alias gpr="git pull --rebase"
 alias gd="git diff"
+alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias whatdidido='git log --all --author=$USER --since=1.weeks --graph --decorate'
 
 # Clean up merged local branches (that don't match dev or master)
