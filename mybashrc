@@ -34,7 +34,7 @@ alias gd="git diff"
 alias whatdidido='git log --all --author=$USER --since=1.weeks --graph --decorate'
 
 # Clean up merged local branches (that don't match dev or master)
-function git-clean {
+function git-mop {
   commit=$1
   to_delete=`git branch --merged | egrep -v '^. (dev|master)$'`
   if [ -z "$to_delete" ]; then
