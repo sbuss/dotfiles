@@ -83,8 +83,9 @@ export PATH=/usr/local/lib/node_modules:$PATH
 alias tags="hash -r && ctags -R --python-kinds=-i ."
 
 # Go development
-export GOROOT=/usr/local/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=/Users/sbuss/gopkgs
+export PATH=$PATH:$GOPATH/bin
 #alias gop="ln -s $1 $GOPATH/$2"
 addgopkg () {
 	ln -s $1 $GOPATH/src/$2
