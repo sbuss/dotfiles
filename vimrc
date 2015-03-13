@@ -23,45 +23,45 @@ set foldmethod=indent
 " Vundle
 set nocompatible 
 filetype off                  " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 "set rtp+=$GOROOT/misc/vim
-call vundle#rc()
+call vundle#begin()
 
 " Let vundle manage vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My bundles here
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
-Bundle 'nvie/vim-flake8'
-Bundle 'garbas/vim-web-indent'
-Bundle 'vim-scripts/django.vim'
-Bundle 'kana/vim-arpeggio'
-Bundle 'ervandew/supertab'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'godlygeek/tabular'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'nvie/vim-flake8'
+Plugin 'garbas/vim-web-indent'
+Plugin 'vim-scripts/django.vim'
+Plugin 'kana/vim-arpeggio'
+Plugin 'ervandew/supertab'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'godlygeek/tabular'
 
 " Puppet
-Bundle 'rodjek/vim-puppet'
+Plugin 'rodjek/vim-puppet'
 
 " clojure bundles
-Bundle 'tpope/vim-fireplace'
-Bundle 'guns/vim-clojure-static'
-Bundle 'amdt/vim-niji'
-Bundle 'paredit.vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'amdt/vim-niji'
+Plugin 'paredit.vim'
 
+call vundle#end()             " required!
 filetype plugin indent on     " required! 
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 "set wrap
 "set linebreak
