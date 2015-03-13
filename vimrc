@@ -11,7 +11,7 @@ autocmd FileType html setlocal expandtab softtabstop=2 shiftwidth=2 tabstop=8
 autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=8
 autocmd FileType coffee setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
 autocmd FileType htmldjango setlocal expandtab softtabstop=2 shiftwidth=2 tabstop=8
-autocmd FileType sh setlocal tabstop=4
+autocmd FileType sh setlocal tabstop=8 expandtab
 
 set showmatch
 
