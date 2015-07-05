@@ -20,53 +20,7 @@ set number
 " Code folding
 set foldmethod=indent
 
-" Vundle
-set nocompatible 
-filetype off                  " required!
-set rtp+=~/.vim/bundle/Vundle.vim
-"set rtp+=$GOROOT/misc/vim
-call vundle#begin()
-
-" Let vundle manage vundle
-Plugin 'gmarik/vundle'
-
-" My bundles here
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/django.vim'
-Plugin 'kana/vim-arpeggio'
-Plugin 'ervandew/supertab'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'godlygeek/tabular'
-
-" Puppet
-Plugin 'rodjek/vim-puppet'
-
-" clojure bundles
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'paredit.vim'
-
-call vundle#end()             " required!
-filetype plugin indent on     " required! 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-"set wrap
-"set linebreak
-"set nolist
-"set virtualedit=
-"set display += lastline
-
+source $HOME/.vim/plugins
 
 colorscheme slate 
 
