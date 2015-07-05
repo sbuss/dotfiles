@@ -12,3 +12,7 @@ ln -s `pwd`/screenrc $HOME/.screenrc
 ln -s `pwd`/bash_profile $HOME/.bash_profile
 ln -s `pwd`/gitglobalignore $HOME/.gitglobalignore
 git config --global core.excludesfile $HOME/.gitglobalignore
+
+mkdir -p ~/.vim/bundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
