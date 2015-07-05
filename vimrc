@@ -35,7 +35,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nvie/vim-flake8'
-Plugin 'garbas/vim-web-indent'
 Plugin 'vim-scripts/django.vim'
 Plugin 'kana/vim-arpeggio'
 Plugin 'ervandew/supertab'
@@ -49,7 +48,6 @@ Plugin 'rodjek/vim-puppet'
 " clojure bundles
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
-Plugin 'amdt/vim-niji'
 Plugin 'paredit.vim'
 
 call vundle#end()             " required!
