@@ -16,6 +16,8 @@ ln -s `pwd`/bash_profile $HOME/.bash_profile
 ln -s `pwd`/gitglobalignore $HOME/.gitglobalignore
 git config --global core.excludesfile $HOME/.gitglobalignore
 
-mkdir -p ~/.vim/bundle
+rm -rf $HOME/.vim/bundle
+mkdir -p $HOME/.vim/bundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -u ~/.vim/plugins +PluginInstall +qall
+mkdir -p $HOME/.vim/swap
