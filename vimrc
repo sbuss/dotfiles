@@ -5,6 +5,7 @@ set autoindent
 set guifont=Droid\ Sans\ Mono:h12
 
 autocmd FileType markdown setlocal expandtab softtabstop=4 tabstop=8
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType python setlocal expandtab softtabstop=4 tabstop=8
 autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=8
 autocmd FileType html setlocal expandtab softtabstop=2 shiftwidth=2 tabstop=8
