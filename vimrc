@@ -23,7 +23,9 @@ set foldmethod=indent
 
 source $HOME/.vim/plugins
 
-colorscheme slate 
+" Explicitly support 256 colors
+set t_Co=256
+colorscheme slate
 
 nmap <silent><Home> :call SmartHome("n")<CR>
 nmap <silent><End> :call SmartEnd("n")<CR>
