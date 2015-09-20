@@ -19,6 +19,7 @@ Plugin 'ervandew/supertab'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular'
+Plugin 'flazz/vim-colorschemes'
 
 " Puppet
 Plugin 'rodjek/vim-puppet'
