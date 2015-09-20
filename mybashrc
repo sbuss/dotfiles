@@ -11,6 +11,10 @@ if hash brew 2> /dev/null; then
     fi
 fi
 
+if hash brew 2> /dev/null; then
+    export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+fi
+
 alias cim='vim'
 
 #alias go='open'
