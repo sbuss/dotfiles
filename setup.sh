@@ -7,8 +7,10 @@ rm $HOME/.screenrc
 rm $HOME/.bash_profile
 rm $HOME/.gitglobalignore
 mkdir -p $HOME/.vim
+mkdir -p $HOME/.vim/colors
 ln -s `pwd`/vimrc $HOME/.vimrc
 ln -s `pwd`/vimrc_plugins $HOME/.vim/plugins
+ln -s `pwd`/my-vim-colors/*.vim $HOME/.vim/colors/
 ln -s `pwd`/bashrc $HOME/.bashrc
 ln -s `pwd`/mybashrc $HOME/.mybashrc
 ln -s `pwd`/screenrc $HOME/.screenrc
