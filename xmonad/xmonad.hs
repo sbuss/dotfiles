@@ -102,6 +102,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer -c1 set Master 2-")
     , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer -c1 set Master 2+")
     , ((0, xF86XK_AudioMute          ), spawn "amixer -c1 set Master toggle")
+
+    -- Brightness
+    , ((0, xF86XK_MonBrightnessUp    ), spawn "xbacklight +5")
+    , ((0, xF86XK_MonBrightnessDown  ), spawn "xbacklight -5")
     ]
     ++
  
