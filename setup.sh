@@ -68,6 +68,7 @@ _linux() {
 all_platforms() {
     _vim
     _bash
+    _git
     rm $HOME/.screenrc
     ln -s `pwd`/screenrc $HOME/.screenrc
 }
