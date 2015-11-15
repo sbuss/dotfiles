@@ -11,3 +11,6 @@ export PATH=$HOME/.local/bin:$PATH
 export WORKON_HOME=$HOME/envs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 . $HOME/.local/bin/virtualenvwrapper.sh
+
+# Haskell bins
+export PATH=$HOME/.cabal/bin:$PATH
