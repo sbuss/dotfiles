@@ -64,6 +64,7 @@ all_platforms() {
     case `uname` in
       $LINUX_UNAME)
         _xmonad
+        ln -s `pwd`/Xmodmap $HOME/.Xmodmap
       ;;
     esac
 }
