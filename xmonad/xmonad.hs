@@ -180,7 +180,9 @@ myLayout = spacing 2 $ layoutHintsToCenter (avoidStruts $ tiled ||| Mirror tiled
     delta   = 3/100
 
 
-main = xmonad gnomeConfig 
+main = do
+xmproc <- spawnPipe "/home/sbuss/.cabal/bin/xmobar /home/sbuss/.xmobar"
+xmonad gnomeConfig
     { manageHook = myManageHook
     -- , modMask = mod1Mask
     , modMask = mod4Mask
@@ -190,5 +192,10 @@ main = xmonad gnomeConfig
     -- , focusedBorderColor = "#1793d0"
     -- , focusedBorderColor = "red"
     , borderWidth = 3
+    , logHook = dynamicLogWithPP xmobarPP
+        { ppOutput = hPutStrLn xmproc
+	, ppTitle = xmobarColor "blue" "" . shorten 50
+	, ppLayout = const "" -- to disable the layout info on xmobar
+	}
     }
 

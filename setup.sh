@@ -54,6 +54,7 @@ _xmonad() {
     fi
     ln -s `pwd`/conkyrc $HOME/.conkyrc
     ln -s `pwd`/Xdefaults $HOME/.Xdefaults
+    ln -s `pwd`/xmobar $HOME/.xmobar
 }
 
 all_platforms() {
