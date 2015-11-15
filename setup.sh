@@ -23,7 +23,9 @@ _vim() {
 _bash() {
     rm $HOME/.bashrc
     rm $HOME/.mybashrc
-    ln -s `pwd`/bash $HOME/.bash
+    if [[ ! -d $HOME/.bash ]]; then
+        ln -s `pwd`/bash $HOME/.bash
+    fi
     ln -s `pwd`/bashrc $HOME/.bashrc
     ln -s `pwd`/mybashrc $HOME/.mybashrc
     case `uname` in
@@ -44,8 +46,12 @@ _xmonad() {
     # Xmonad
     rm $HOME/.conkyrc
     rm $HOME/.Xdefaults
-    ln -s `pwd`/xmonad $HOME/.xmonad
-    ln -s `pwd`/dzen $HOME/.dzen
+    if [[ ! -d $HOME/.xmonad ]]; then
+        ln -s `pwd`/xmonad $HOME/.xmonad
+    fi
+    if [[ ! -d $HOME/.dzen ]]; then
+        ln -s `pwd`/dzen $HOME/.dzen
+    fi
     ln -s `pwd`/conkyrc $HOME/.conkyrc
     ln -s `pwd`/Xdefaults $HOME/.Xdefaults
 }
