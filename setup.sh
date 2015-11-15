@@ -66,6 +66,9 @@ all_platforms() {
       $LINUX_UNAME)
         _xmonad
         ln -s `pwd`/Xmodmap $HOME/.Xmodmap
+        if [[ ! -d $HOME/scripts ]]; then
+            ln -s `pwd`/scripts $HOME/scripts
+        fi
       ;;
     esac
 }
