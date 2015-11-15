@@ -57,20 +57,25 @@ _xmonad() {
     ln -s `pwd`/xmobar $HOME/.xmobar
 }
 
+_linux() {
+    ln -s `pwd`/Xmodmap $HOME/.Xmodmap
+    ln -s `pwd`/xinitrc $HOME/.xinitrc
+    if [[ ! -d $HOME/scripts ]]; then
+        ln -s `pwd`/scripts $HOME/scripts
+    fi
+}
+
 all_platforms() {
     _vim
     _bash
     rm $HOME/.screenrc
     ln -s `pwd`/screenrc $HOME/.screenrc
-    case `uname` in
-      $LINUX_UNAME)
-        _xmonad
-        ln -s `pwd`/Xmodmap $HOME/.Xmodmap
-        if [[ ! -d $HOME/scripts ]]; then
-            ln -s `pwd`/scripts $HOME/scripts
-        fi
-      ;;
-    esac
 }
 
 all_platforms
+case `uname` in
+  $LINUX_UNAME)
+    _xmonad
+    _linux
+  ;;
+esac
