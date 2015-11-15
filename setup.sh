@@ -23,6 +23,7 @@ _vim() {
 _bash() {
     rm $HOME/.bashrc
     rm $HOME/.mybashrc
+    ln -s `pwd`/bash $HOME/.bash
     ln -s `pwd`/bashrc $HOME/.bashrc
     ln -s `pwd`/mybashrc $HOME/.mybashrc
     case `uname` in
