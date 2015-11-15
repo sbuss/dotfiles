@@ -1,18 +1,17 @@
 OSX_UNAME='Darwin'
 LINUX_UNAME='Linux'
+BD=$HOME/.bash
 
-. $HOME/.bash/all_platforms.sh
-. $HOME/.bash/aliases.sh
+. $BD/all_platforms.sh
+. $BD/aliases.sh
 
 case `uname -r` in
   $OSX_UNAME)
-    . $HOME/.bash/osx.sh
+    . $BD/osx.sh
     ;;
   $LINUX_UNAME)
-    . $HOME/.bash/linux.sh
+    . $BD/linux.sh
     ;;
 esac
 
-
-# ctags - perform this from project root
-alias tags="hash -r && ctags -R --python-kinds=-i ."
+. $BD/PS1.sh

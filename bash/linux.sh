@@ -4,9 +4,7 @@ export DOCKER_HOST=tcp://0.0.0.0:2376
 export DOCKER_TLS_VERIFY=1
 
 # enable bash completion in interactive shells
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+. /etc/bash_completion
 
 # Python development
 export PATH=$HOME/.local/bin:$PATH
