@@ -13,6 +13,7 @@ import Data.Monoid
 import Data.List
 import System.Exit
 import XMonad.Layout.Spacing
+import Graphics.X11.ExtraTypes.XF86
  
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -96,6 +97,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+
+    -- Volume keys
+    , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer -c1 set Master 2-")
+    , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer -c1 set Master 2+")
+    , ((0, xF86XK_AudioMute          ), spawn "amixer -c1 set Master toggle")
     ]
     ++
  
