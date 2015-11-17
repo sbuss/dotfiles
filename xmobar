@@ -4,7 +4,7 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=14:bold:antialias=true"
 	, position = Static { xpos = 0 , ypos = 0, width = 1920, height = 24 }
     , commands = [ 
           Run Cpu ["-L","3","-H","50","-p","2","--normal","green","--high","red"] 10
-	, Run CoreTemp ["-t", "<core0>°C","-L","30","-H","50","--normal","orange","--low","blue","--high","red"] 10
+	, Run CoreTemp ["-t", "<core0>°C","-L","30","-H","50","--normal","orange","--low","cyan","--high","red"] 10
 	, Run Memory ["-t","Mem:<usedratio>%"] 10
 	, Run Com "/home/sbuss/scripts/volume.sh" [] "volume" 10
 	, Run Wireless "wlp3s0" ["-t", "<essid>:[<qualitybar>]"] 50
