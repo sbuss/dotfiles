@@ -194,7 +194,7 @@ xmonad gnomeConfig
     , borderWidth = 3
     , logHook = dynamicLogWithPP xmobarPP
         { ppOutput = hPutStrLn xmproc
-	, ppTitle = xmobarColor "blue" "" . shorten 50
+	, ppTitle = xmobarColor "white" "" . shorten 50
 	, ppLayout = const "" -- to disable the layout info on xmobar
 	}
     }
