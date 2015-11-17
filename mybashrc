@@ -15,3 +15,4 @@ case `uname -r` in
 esac
 
 . $BD/PS1.sh
+. $BD/docker-machine-completion.sh
