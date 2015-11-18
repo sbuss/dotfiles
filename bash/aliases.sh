@@ -45,3 +45,8 @@ alias restartpostgres="rm /usr/local/var/postgres/postmaster.pid && pg_ctl -D /u
 
 # ctags - perform this from project root
 alias tags="hash -r && ctags -R --python-kinds=-i ."
+
+# Docker
+alias d="docker"
+alias dr="docker run"
+alias dm="docker-machine"
