@@ -22,6 +22,8 @@ myManageHook = composeAll (
    [ manageHook gnomeConfig
     , className =? "Unity-2d-panel" --> doIgnore
     , className =? "Unity-2d-launcher" --> doFloat
+    , isFullscreen --> doFullFloat
+    , className =? "Vlc" --> doFloat
     ])
 
 ------------------------------------------------------------------------
@@ -165,7 +167,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = spacing 2 $ layoutHintsToCenter (avoidStruts $ tiled ||| Mirror tiled ||| Full)
+myLayout = spacing 2 $ layoutHintsToCenter (smartBorders . avoidStruts $ tiled ||| Mirror tiled ||| Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
