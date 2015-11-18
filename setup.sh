@@ -30,7 +30,7 @@ _bash() {
     fi
     ln -s `pwd`/bashrc $HOME/.bashrc
     ln -s `pwd`/mybashrc $HOME/.mybashrc
-    case `uname` in
+    case `uname -s` in
       $OSX_UNAME)
         rm $HOME/.bash_profile
         ln -s `pwd`/bash_profile $HOME/.bash_profile
@@ -76,7 +76,7 @@ all_platforms() {
 }
 
 all_platforms
-case `uname` in
+case `uname -s` in
   $LINUX_UNAME)
     _xmonad
     _linux

@@ -5,7 +5,7 @@ BD=$HOME/.bash
 . $BD/all_platforms.sh
 . $BD/aliases.sh
 
-case `uname -r` in
+case `uname -s` in
   $OSX_UNAME)
     . $BD/osx.sh
     ;;
