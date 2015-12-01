@@ -19,3 +19,7 @@ hi Normal           ctermfg=254             ctermbg=234
 hi clear NonText
 hi NonText          guifg=#404040                                   gui=none
 hi NonText          ctermfg=234                                     cterm=none
+
+" Lighten comments
+"hi Comment          guifg=#787775                                  gui=italic
+hi Comment          ctermfg=248                                     cterm=none
