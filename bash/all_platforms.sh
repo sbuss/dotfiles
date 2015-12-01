@@ -31,3 +31,12 @@ addgopkg () {
 	ln -s $1 $GOPATH/src/$2
 }
 alias gop=addgopkg
+
+export GCLOUD_PATH=${HOME}/google-cloud-sdk
+if [[ -f ${GCLOUD_PATH}/path.bash.inc ]]; then
+  # The next line updates PATH for the Google Cloud SDK.
+  . ${GCLOUD_PATH}/path.bash.inc
+
+  # The next line enables shell command completion for gcloud.
+  . ${GCLOUD_PATH}/completion.bash.inc
+fi
