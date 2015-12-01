@@ -22,6 +22,9 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular'
 Plugin 'flazz/vim-colorschemes'
 
+" Thrift
+Plugin 'solarnz/thrift.vim'
+
 " Puppet
 Plugin 'rodjek/vim-puppet'
 
