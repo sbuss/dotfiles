@@ -31,11 +31,13 @@ alias l='ls -CF'
 alias gb="git branch"
 alias gs="git status"
 alias gc="git checkout"
+alias gcm="git commit -m"
 alias ga="git add"
 alias gl="git log --graph"
 alias glm="gl master.."
 alias gp="git pull"
 alias gpr="git pull --rebase"
+alias gap="git add -p"
 alias gd="git diff"
 alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias whatdidido='git log --all --author=$USER --since=1.weeks --graph --decorate'
