@@ -182,8 +182,19 @@ set rtp+=$GOROOT/misc/vim
 "filetype plugin indent on  " Already set above
 syntax on
 autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
-Arpeggio noremap gd :Godoc<CR>
-Arpeggio noremap gf :Fmt<CR>
+au FileType go let maplocalleader=","
+au FileType go nmap <LocalLeader>d <Plug>(go-doc-split)
+au FileType go nmap <LocalLeader>f :GoFmt<CR>
+au FileType go nmap <LocalLeader>r :GoRun<CR>
+au FileType go nmap <LocalLeader>b :GoBuild<CR>
+au FileType go nmap <LocalLeader>t :GoTest<CR>
+au FileType go nmap <LocalLeader>c :GoCoverage<CR>
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 function! Marked()
     execute 'set filetype=markdown'

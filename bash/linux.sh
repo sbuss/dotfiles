@@ -14,3 +14,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
 # Haskell bins
 export PATH=$HOME/.cabal/bin:$PATH
+
+# golang
+export PATH=/usr/local/go/bin:$PATH
+export GOPATH=$HOME/.goworkspace
