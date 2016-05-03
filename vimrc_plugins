@@ -10,14 +10,11 @@ Plugin 'gmarik/vundle'
 
 " My bundles here
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/django.vim'
 Plugin 'kana/vim-arpeggio'
 Plugin 'ervandew/supertab'
-"Plugin 'jnwhiteh/vim-golang'
 Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular'
@@ -25,14 +22,6 @@ Plugin 'flazz/vim-colorschemes'
 
 " Thrift
 Plugin 'solarnz/thrift.vim'
-
-" Puppet
-Plugin 'rodjek/vim-puppet'
-
-" clojure bundles
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'paredit.vim'
 
 call vundle#end()             " required!
 filetype plugin indent on     " required! 
