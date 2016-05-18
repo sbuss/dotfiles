@@ -23,12 +23,10 @@ _vim() {
 }
 
 _bash() {
-    rm $HOME/.bashrc
     rm $HOME/.mybashrc
     if [[ ! -d $HOME/.bash ]]; then
         ln -s `pwd`/bash $HOME/.bash
     fi
-    ln -s `pwd`/bashrc $HOME/.bashrc
     ln -s `pwd`/mybashrc $HOME/.mybashrc
     case `uname -s` in
       $OSX_UNAME)
@@ -36,6 +34,9 @@ _bash() {
         ln -s `pwd`/bash_profile $HOME/.bash_profile
         ;;
     esac
+    if ! grep 'mybashrc' $HOME/.bashrc; then
+      echo ". $HOME/.mybashrc" >> $HOME/.bashrc
+    fi
 }
 
 _git() {
