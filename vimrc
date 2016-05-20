@@ -1,3 +1,5 @@
+set nocompatible
+
 syn on
 set shiftwidth=4
 set noexpandtab
