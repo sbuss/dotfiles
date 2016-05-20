@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " My bundles here
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nvie/vim-flake8'
