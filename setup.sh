@@ -10,8 +10,8 @@ _vim() {
     rm $HOME/.vim/plugins
     mkdir -p $HOME/.vim
     mkdir -p $HOME/.vim/colors
-    ln -s `pwd`/vimrc_plugins $HOME/.vim/plugins
-    ln -s `pwd`/my-vim-colors/*.vim $HOME/.vim/colors/
+    ln -s `pwd`/vim/plugins $HOME/.vim/plugins
+    ln -s `pwd`/vim/colors/*.vim $HOME/.vim/colors/
 
     mkdir -p $HOME/.vim/bundle
     local vundle_dest=$HOME/.vim/bundle/Vundle.vim
