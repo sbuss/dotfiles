@@ -3,6 +3,14 @@
 OSX_UNAME='Darwin'
 LINUX_UNAME='Linux'
 
+_workspace() {
+    export WORKDIR=$HOME/workspace
+    mkdir -p $WORKDIR
+    mkdir -p $WORKDIR/src/github.com/sbuss
+    mkdir -p $WORKDIR/pkg
+    mkdir -p $WORKDIR/bin
+}
+
 _vim() {
     rm $HOME/.vimrc
     ln -s `pwd`/vimrc $HOME/.vimrc
@@ -71,6 +79,7 @@ _linux() {
 }
 
 all_platforms() {
+    _workspace
     _vim
     _bash
     _git

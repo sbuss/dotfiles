@@ -5,6 +5,7 @@ bind '"\e[B":history-search-forward'
 # Make pip always install files into the current virtualenv
 export PIP_RESPECT_VIRTUALENV=true
 
+export WORKDIR=$HOME/workspace
 
 # Clean up merged local branches (that don't match dev or master)
 function git-mop {
@@ -24,7 +25,7 @@ function git-mop {
 
 # Go development
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOPATH=$HOME/gopkgs
+export GOPATH=$WORKDIR
 export PATH=$PATH:$GOPATH/bin
 #alias gop="ln -s $1 $GOPATH/$2"
 addgopkg () {
