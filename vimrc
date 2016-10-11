@@ -111,10 +111,10 @@ inoremap <buffer> <silent> <Down> <C-o>gj
 map <A-j> yyP
 highlight Comment term=NONE ctermfg=Cyan
 
-" Highlight things longer than 74 characters
+" Highlight things longer than 100 characters
 " This doesn't always work
-"set ruler
-":match ErrorMsg '\%>74v.\+'
+set ruler
+:match ErrorMsg '\%>100v.\+'
 :set cc=78
 
 " Always open nerdtree at the proj bookmark
