@@ -23,15 +23,12 @@ function git-mop {
 }
 
 # Go development
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOPATH=$HOME/gopkgs
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+mkdir -p $GOPATH
 export PATH=$PATH:$GOPATH/bin
-#alias gop="ln -s $1 $GOPATH/$2"
-addgopkg () {
-	ln -s $1 $GOPATH/src/$2
-}
-alias gop=addgopkg
 
+# Google cloud
 export GCLOUD_PATH=${HOME}/google-cloud-sdk
 if [[ -f ${GCLOUD_PATH}/path.bash.inc ]]; then
   # The next line updates PATH for the Google Cloud SDK.
@@ -40,3 +37,6 @@ if [[ -f ${GCLOUD_PATH}/path.bash.inc ]]; then
   # The next line enables shell command completion for gcloud.
   . ${GCLOUD_PATH}/completion.bash.inc
 fi
+
+# Use vim
+export EDITOR=vim
