@@ -48,9 +48,6 @@ _git() {
 _linux() {
     ln -s `pwd`/Xmodmap $HOME/.Xmodmap
     ln -s `pwd`/xinitrc $HOME/.xinitrc
-    if [[ ! -d $HOME/scripts ]]; then
-        ln -s `pwd`/scripts $HOME/scripts
-    fi
 }
 
 all_platforms() {
