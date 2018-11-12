@@ -2,27 +2,21 @@
 set nocompatible 
 filetype off                  " required!
 set rtp+=~/.vim/bundle/Vundle.vim
-"set rtp+=$GOROOT/misc/vim
 call vundle#begin()
 
 " Let vundle manage vundle
 Plugin 'gmarik/vundle'
 
 " My bundles here
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/django.vim'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'nvie/vim-flake8'
+"Plugin 'vim-scripts/django.vim'
 Plugin 'kana/vim-arpeggio'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'godlygeek/tabular'
 Plugin 'flazz/vim-colorschemes'
-
-" Thrift
-Plugin 'solarnz/thrift.vim'
 
 call vundle#end()             " required!
 filetype plugin indent on     " required! 
