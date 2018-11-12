@@ -45,21 +45,6 @@ _git() {
     git config --global core.excludesfile $HOME/.gitglobalignore
 }
 
-_xmonad() {
-    # Xmonad
-    rm $HOME/.conkyrc
-    rm $HOME/.Xdefaults
-    if [[ ! -d $HOME/.xmonad ]]; then
-        ln -s `pwd`/xmonad $HOME/.xmonad
-    fi
-    if [[ ! -d $HOME/.dzen ]]; then
-        ln -s `pwd`/dzen $HOME/.dzen
-    fi
-    ln -s `pwd`/conkyrc $HOME/.conkyrc
-    ln -s `pwd`/Xdefaults $HOME/.Xdefaults
-    ln -s `pwd`/xmobar $HOME/.xmobar
-}
-
 _linux() {
     ln -s `pwd`/Xmodmap $HOME/.Xmodmap
     ln -s `pwd`/xinitrc $HOME/.xinitrc
@@ -81,7 +66,6 @@ all_platforms() {
 all_platforms
 case `uname -s` in
   $LINUX_UNAME)
-    _xmonad
     _linux
   ;;
 esac

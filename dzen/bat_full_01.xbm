@@ -1,4 +1,0 @@
-#define bat_full_01_width 8
-#define bat_full_01_height 8
-static char bat_full_01_bits[] = {
-  0xE7, 0x81, 0xBD, 0xA5, 0xA5, 0xA5, 0xBD, 0x81, };
