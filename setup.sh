@@ -51,8 +51,6 @@ _linux() {
     if [[ ! -d $HOME/scripts ]]; then
         ln -s `pwd`/scripts $HOME/scripts
     fi
-    rm $HOME/.config/redshift.conf
-    ln -s `pwd`/redshift.conf $HOME/.config/redshift.conf
 }
 
 all_platforms() {

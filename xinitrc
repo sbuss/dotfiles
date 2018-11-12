@@ -1,5 +1,4 @@
 /usr/bin/xmodmap /home/sbuss/.Xmodmap
-redshift &
 
 # That \K in the grep is a zero-width look-behind assertion which basically
 # means "only match if these digits are preceeded by id=, but don't include
