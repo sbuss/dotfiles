@@ -16,7 +16,7 @@ _vim() {
     mkdir -p $HOME/.vim/bundle
     local vundle_dest=$HOME/.vim/bundle/Vundle.vim
     if [[ ! -d $vundle_dest ]]; then
-        git clone https://github.com/gmarik/Vundle.vim.git $vundle_dest
+        git clone https://github.com/VundleVim/Vundle.vim.git $vundle_dest
     fi
     vim -u ~/.vim/plugins +PluginInstall +qall
     mkdir -p $HOME/.vim/swap
