@@ -13,7 +13,7 @@ let colors_name = "obsidian-sbuss"
 " Darken the background color, lighten foreground
 hi clear Normal
 hi Normal           guifg=#D4D2CF           guibg=#131313
-hi Normal           ctermfg=254             ctermbg=234
+hi Normal           ctermfg=254             ctermbg=NONE
 
 " Darken the left-hand number column
 hi clear NonText
