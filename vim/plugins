@@ -17,6 +17,7 @@ Plugin 'kana/vim-arpeggio'
 "Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()             " required!
 filetype plugin indent on     " required! 
