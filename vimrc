@@ -125,7 +125,7 @@ set ruler
 
 " Auto-run flake8 on every write of a .py file
 " flake8 runs pyflakes, pep8, and complexity checkers
-" autocmd FileType python map <buffer> <F3> :call flake8#Flake8()<CR>
+autocmd BufWritePost *.py call Flake8()
 
 " wildmenu shows menu suggestions
 set wildmenu
