@@ -25,7 +25,6 @@ function git-mop {
 # Go development
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
-mkdir -p $GOPATH
 export PATH=$PATH:$GOPATH/bin
 
 # Google cloud
