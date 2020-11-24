@@ -7,4 +7,4 @@
 . /etc/bash_completion
 
 # Python development
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH:/usr/local/go/bin
