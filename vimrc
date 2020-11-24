@@ -212,7 +212,7 @@ vnoremap j gj
 vnoremap k gk
 
 " Use the system clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " Syntastic
 set statusline+=%#warningmsg#
