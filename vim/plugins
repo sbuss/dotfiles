@@ -12,6 +12,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'nvie/vim-flake8'
+" Smart auto-indentation for Python
+Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'vim-scripts/django.vim'
 Plugin 'kana/vim-arpeggio'
 "Plugin 'ervandew/supertab'
