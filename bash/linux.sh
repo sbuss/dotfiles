@@ -8,3 +8,8 @@
 
 # Python development
 export PATH=$HOME/.local/bin:$PATH:/usr/local/go/bin
+
+# CUDA
+if [[ -d "/usr/local/cuda" ]]; then
+    export PATH=/usr/local/cuda/bin:$PATH
+fi
