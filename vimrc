@@ -125,7 +125,7 @@ set ruler
 
 " Auto-run flake8 on every write of a .py file
 " flake8 runs pyflakes, pep8, and complexity checkers
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call flake8#Flake8()
 
 " wildmenu shows menu suggestions
 set wildmenu
@@ -220,6 +220,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_mode_map = {'mode': 'active'}
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
