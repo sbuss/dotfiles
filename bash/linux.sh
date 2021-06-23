@@ -15,10 +15,10 @@ if [[ -d "/usr/local/cuda" ]]; then
 fi
 
 # X1 Carbon trackpoint config
-if [[ $(hostname) == "sierra" ]]; then
-    device='TPPS/2 Elan TrackPoint'
-    # Flat accel profile
-    xinput set-prop "$device" 'libinput Accel Profile Enabled' {0, 1}
-    # Set accel value
-    xinput set-prop "$device" 'libinput Accel Speed' .8
-fi
+#if [[ $(hostname) == "sierra" ]]; then
+#    device='TPPS/2 Elan TrackPoint'
+#    # Flat accel profile
+#    xinput set-prop "$device" 'libinput Accel Profile Enabled' {0, 1}
+#    # Set accel value
+#    xinput set-prop "$device" 'libinput Accel Speed' .8
+#fi
