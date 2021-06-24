@@ -1,3 +1,4 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Git completion
 # if on osx then 'brew install bash-completion'
