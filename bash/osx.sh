@@ -16,6 +16,8 @@ if hash brew 2> /dev/null; then
     export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 fi
 
+# Postgres via the app
+export PATH=/Library/PostgreSQL/13/bin:$PATH
 
 # Python development
 # export PATH=/usr/local/share/python:$PATH
