@@ -1,4 +1,6 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Git completion
 # if on osx then 'brew install bash-completion'
