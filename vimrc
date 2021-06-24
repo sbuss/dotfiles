@@ -244,3 +244,6 @@ if shell_error == 0
 else
   let g:ycm_python_binary_path = 'python'
 endif
+
+# OSX brew-installed vim... breaks backspace? This fixes it.
+set backspace=2
