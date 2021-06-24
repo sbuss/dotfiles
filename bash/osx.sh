@@ -12,6 +12,7 @@ if hash brew 2> /dev/null; then
 fi
 
 if hash brew 2> /dev/null; then
+    export CLICOLOR=1
     export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 fi
 
