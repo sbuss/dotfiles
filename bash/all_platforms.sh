@@ -22,20 +22,5 @@ function git-mop {
   fi
 }
 
-# Go development
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# Google cloud
-export GCLOUD_PATH=${HOME}/google-cloud-sdk
-if [[ -f ${GCLOUD_PATH}/path.bash.inc ]]; then
-  # The next line updates PATH for the Google Cloud SDK.
-  . ${GCLOUD_PATH}/path.bash.inc
-
-  # The next line enables shell command completion for gcloud.
-  . ${GCLOUD_PATH}/completion.bash.inc
-fi
-
 # Use vim
 export EDITOR=vim
