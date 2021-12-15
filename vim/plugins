@@ -21,6 +21,10 @@ Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Valloric/YouCompleteMe'
 
+" Colorschemes
+Plugin 'danilo-augusto/vim-afterglow'
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()             " required!
 filetype plugin indent on     " required! 
 " Brief help
