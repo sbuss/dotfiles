@@ -27,6 +27,7 @@ source $HOME/.vim/plugins
 
 " Explicitly support 256 colors
 set t_Co=256
+set background=dark
 "colorscheme slate
 "colorscheme lilypink
 "colorscheme obsidian
@@ -34,7 +35,10 @@ set t_Co=256
 "colorscheme harlequin
 "colorscheme molokai
 "colorscheme hybrid
-colorscheme obsidian-sbuss
+" colorscheme obsidian-sbuss
+" colorscheme afterglow
+let g:solarized_contrast="high"
+colorscheme solarized
 
 nmap <silent><Home> :call SmartHome("n")<CR>
 nmap <silent><End> :call SmartEnd("n")<CR>
@@ -244,3 +248,6 @@ if shell_error == 0
 else
   let g:ycm_python_binary_path = 'python'
 endif
+
+" OSX brew-installed vim... breaks backspace? This fixes it.
+set backspace=2
