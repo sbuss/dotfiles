@@ -9,7 +9,7 @@ export PIP_RESPECT_VIRTUALENV=true
 # Clean up merged local branches (that don't match dev or master)
 function git-mop {
   commit=$1
-  to_delete=`git branch --merged | egrep -v '^. (dev|master)$'`
+  to_delete=`git branch --merged | egrep -v '^. (dev|master|main)$'`
   if [ -z "$to_delete" ]; then
     echo "No branches to delete"
   else
