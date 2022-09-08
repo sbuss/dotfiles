@@ -14,7 +14,7 @@ function git-mop {
     echo "No branches to delete"
   else
     if [[ $commit == "-c" ]]; then
-      git branch -d $to_delete
+      echo "$to_delete" | xargs -n 1 -r git branch -d
       git prune
     else
       echo "$to_delete"
