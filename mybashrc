@@ -24,10 +24,12 @@ if [ -f '/home/sbuss/google-cloud-sdk/path.bash.inc' ]; then . '/home/sbuss/goog
 if [ -f '/home/sbuss/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sbuss/google-cloud-sdk/completion.bash.inc'; fi
 
 ### WSL config ###
-# Keychain management for ssh
-keychain --quiet --nogui ~/.ssh/id_ed25519
-. ~/.keychain/`uname -n`-sh
+if [[ $(grep -i microsoft /proc/version) ]]; then
+    # Keychain management for ssh
+    keychain --quiet --nogui ~/.ssh/id_ed25519
+    . ~/.keychain/`uname -n`-sh
 
-# Set screen directory to avoid the 'permission denied' error
-export SCREENDIR=$HOME/.screen
-[ -d $SCREENDIR ] || mkdir -p -m 700 $SCREENDIR
+    # Set screen directory to avoid the 'permission denied' error
+    export SCREENDIR=$HOME/.screen
+    [ -d $SCREENDIR ] || mkdir -p -m 700 $SCREENDIR
+fi
