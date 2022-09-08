@@ -22,3 +22,12 @@ if [ -f '/home/sbuss/google-cloud-sdk/path.bash.inc' ]; then . '/home/sbuss/goog
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/sbuss/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sbuss/google-cloud-sdk/completion.bash.inc'; fi
+
+### WSL config ###
+# Keychain management for ssh
+keychain --quiet --nogui ~/.ssh/id_ed25519
+. ~/.keychain/`uname -n`-sh
+
+# Set screen directory to avoid the 'permission denied' error
+export SCREENDIR=$HOME/.screen
+[ -d $SCREENDIR ] || mkdir -p -m 700 $SCREENDIR
