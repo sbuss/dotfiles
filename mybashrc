@@ -35,3 +35,6 @@ if [ -f '/Users/sbuss/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/User
 if [ -f '/Users/sbuss/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/sbuss/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 export PATH="$HOME/.local/bin:$PATH"
 
+alias blaude="CLAUDE_CONFIG_DIR=~/.claude-bacio claude --dangerously-skip-permissions"
+eval "$(direnv hook bash)"
+
