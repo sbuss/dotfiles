@@ -27,3 +27,10 @@ fi
 # # Homebrew npm
 # export PATH=/usr/local/share/npm/bin:$PATH
 # export PATH=/usr/local/lib/node_modules:$PATH
+
+# Ruby
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.2.1
+
+
