@@ -24,3 +24,8 @@ function git-mop {
 
 # Use vim
 export EDITOR=vim
+
+# Load API keys
+if [[ -f api_keys.sh ]]; then
+  . api_keys.sh
+fi
