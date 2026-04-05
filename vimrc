@@ -26,6 +26,7 @@ source $HOME/.vim/plugins
 set t_Co=256
 set background=dark
 let g:solarized_contrast="high"
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " wrap long lines and display them
