@@ -63,3 +63,10 @@ if type __git_complete &>/dev/null; then
     __git_complete gd _git_diff
     __git_complete gl _git_log
 fi
+
+# SSH with portable bashrc (git aliases + prompt on remote machines)
+sshc() {
+    local rc
+    rc=$(base64 < "$HOME/.bash/portable.sh")
+    ssh -t "$@" "echo '$rc' | base64 -d > /tmp/.bashrc_portable && bash --rcfile /tmp/.bashrc_portable"
+}
