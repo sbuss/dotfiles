@@ -1,7 +1,16 @@
 BD=$HOME/.bash
 
 . $BD/all_platforms.sh
-. $BD/osx.sh
+
+case $(uname -s) in
+  Darwin)
+    . $BD/osx.sh
+    ;;
+  Linux)
+    . $BD/linux.sh
+    ;;
+esac
+
 . $BD/aliases.sh
 . $BD/PS1.sh
 
