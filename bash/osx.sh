@@ -2,12 +2,12 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Git completion
-# if on osx then 'brew install bash-completion'
-# see https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
+# Bash completion
 if hash brew 2> /dev/null; then
-    if [ -f `brew --prefix`/etc/bash_completion ]; then
-	. `brew --prefix`/etc/bash_completion
+    if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+        . "$(brew --prefix)/etc/bash_completion"
+    else
+        echo "bash-completion not found. Install with: brew install bash-completion"
     fi
 fi
 
