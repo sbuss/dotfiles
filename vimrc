@@ -38,6 +38,12 @@ noremap  <buffer> <silent> <Down> gj
 inoremap <buffer> <silent> <Up>   <C-o>gk
 inoremap <buffer> <silent> <Down> <C-o>gj
 
+" Moving around long lines (must be before arpeggio#load)
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
 map <A-j> yyP
 highlight Comment term=NONE ctermfg=Cyan
 
