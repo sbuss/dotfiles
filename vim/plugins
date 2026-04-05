@@ -1,44 +1,13 @@
 " Vundle
-set nocompatible 
-filetype off                  " required!
+set nocompatible
+filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let vundle manage vundle
 Plugin 'gmarik/vundle'
-
-" My bundles here
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'scrooloose/nerdtree'
-Plugin 'nvie/vim-flake8'
-" Smart auto-indentation for Python
-Plugin 'vim-scripts/indentpython.vim'
-"Plugin 'vim-scripts/django.vim'
 Plugin 'kana/vim-arpeggio'
-"Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'Valloric/YouCompleteMe'
-
-" Colorschemes
-Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'altercation/vim-colors-solarized'
 
-call vundle#end()             " required!
-filetype plugin indent on     " required! 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-"set wrap
-"set linebreak
-"set nolist
-"set virtualedit=
-"set display += lastline
-
+call vundle#end()
+filetype plugin indent on
