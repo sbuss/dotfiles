@@ -6,8 +6,6 @@ Strip the dotfiles repo down to what's actively used (bash, git, Claude config o
 
 ## Files to Delete
 
-- `vimrc`
-- `vim/` (entire directory — plugins, colors)
 - `screenrc`
 - `xinitrc`
 - `Xmodmap`
@@ -56,19 +54,67 @@ fi
 
 Guarded by `type` check so it's a no-op if bash-completion isn't available. Includes `gpr` (pull --rebase) since it also takes remote/branch args.
 
+### `vimrc`
+
+Strip down to essential settings. Remove all plugin-dependent config except arpeggio.
+
+**Keep:**
+- Basic settings: `nocompatible`, `syn on`, `shiftwidth`, `autoindent`, `number`, `showmatch`, `backspace=2`
+- Filetype indentation rules (python, markdown, sh, html, js, go) — keep coffee/ruby/htmldjango too, cheap insurance
+- Color: `t_Co=256`, `background=dark`, `colorscheme solarized`, solarized contrast setting
+- `highlight Comment` override
+- Column width: `set cc=78`, `:match ErrorMsg` for >100 chars, `set ruler`
+- Clipboard: `"set clipboard=unnamedplus` (commented out, as-is)
+- Line wrapping display + `j`/`k` → `gj`/`gk` mappings
+- `wildmenu`, `wildmode`, `wildignore`, `wildignorecase`
+- Swap dir (`~/.vim/swap//`) and undo dir (`~/.vim/undo//`), `set undofile`
+- `set laststatus=2`
+- Arpeggio `call arpeggio#load()` + all arpeggio mappings
+- `source $HOME/.vim/plugins`
+- `set foldmethod=indent`
+
+**Remove:**
+- `set guifont` (GUI vim)
+- SmartHome/SmartEnd functions + Home/End key mappings
+- `set tags=` (ctags)
+- `Marked()` function + arpeggio `md` mapping for it
+- `set rtp+=$GOROOT/misc/vim` + Go plugin config (lines 187–204)
+- Syntastic config (lines 222–230) + statusline references to Syntastic
+- Fugitive statusline (`fugitive#statusline()`)
+- SuperTab config (`omnifunc`, `SuperTabDefaultCompletionType`)
+- YCM/pipenv integration (lines 237–250)
+- NERDTree references (already commented)
+- `statline_syntastic` variable
+- Duplicate `syntax on` at line 189
+
+### `vim/plugins`
+
+Trim to just the plugins still needed:
+- `gmarik/vundle` (Vundle itself)
+- `kana/vim-arpeggio` (arpeggio mappings)
+- `altercation/vim-colors-solarized` (colorscheme)
+
+Remove: syntastic, fugitive, flake8, indentpython, vim-go, vim-colorschemes (flazz), YouCompleteMe, afterglow, supertab.
+
+### `vim/colors/obsidian-sbuss.vim`
+
+No changes — keep as-is.
+
 ### `setup.sh`
 
+Simplify `_vim()`: remove Vundle clone + `PluginInstall` auto-run (user can run manually if needed). Keep symlinks for `.vimrc`, `.vim/plugins`, `.vim/colors`. Keep `mkdir` for `.vim/swap` and `.vim/undo`.
+
 Remove:
-- `_vim()` function entirely
 - `_linux()` function entirely
 - `rm $HOME/.screenrc` and `ln -s ... screenrc` lines
 
-Keep: `_bash()`, `_git()`, `_claude()`. Remove the `case` block for Linux at the bottom. `all_platforms()` becomes just `_bash`, `_git`, `_claude`.
+Keep: `_bash()`, `_git()`, `_claude()`, `_vim()`. Remove the `case` block for Linux at the bottom. `all_platforms()` becomes `_vim`, `_bash`, `_git`, `_claude`.
 
 ### `CLAUDE.md`
 
 Update to reflect:
-- Simplified structure (no vim, screen, Linux, X11)
+- Simplified structure (no screen, Linux, X11)
+- Vim kept but trimmed (only arpeggio + solarized plugins)
 - New source order in `mybashrc`
 - Git alias completion via `__git_complete`
 - Remove references to deleted files
@@ -84,6 +130,7 @@ Remove dead lines: RVM sourcing, commented-out openssl/terraform. Keep only the 
 - `claude/`, `claude-bacio/` — just added, no changes
 - `bash/all_platforms.sh` — `git-mop`, history search, editor config all still used
 - `bash/PS1.sh` — prompt with git branch still used
+- `vim/colors/obsidian-sbuss.vim` — custom colorscheme
 
 ## Resulting Repo Structure
 
@@ -95,6 +142,11 @@ mybashrc
 gitglobalignore
 setup.sh
 CLAUDE.md
+vimrc
+vim/
+  plugins
+  colors/
+    obsidian-sbuss.vim
 bash/
   aliases.sh
   all_platforms.sh
