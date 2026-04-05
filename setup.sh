@@ -10,7 +10,7 @@ _vim() {
     mkdir -p $HOME/.vim/swap
     mkdir -p $HOME/.vim/undo
     ln -s `pwd`/vim/plugins $HOME/.vim/plugins
-    ln -s `pwd`/vim/colors/*.vim $HOME/.vim/colors/
+    ln -sf `pwd`/vim/colors/*.vim $HOME/.vim/colors/
 }
 
 _bash() {
