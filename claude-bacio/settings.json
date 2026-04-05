@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr:*)"
+    ],
+    "defaultMode": "default"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "serena@claude-plugins-official": false
+  },
+  "syntaxHighlightingDisabled": false,
+  "autoUpdatesChannel": "latest",
+  "skipDangerousModePermissionPrompt": true,
+  "effortLevel": "high",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/sbuss/.claude-bacio/statusline-command.sh"
+  }
+}

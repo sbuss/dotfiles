@@ -45,6 +45,22 @@ _git() {
     git config --global core.excludesfile $HOME/.gitglobalignore
 }
 
+_claude() {
+    # Default claude config (~/.claude)
+    mkdir -p $HOME/.claude
+    rm -f $HOME/.claude/settings.json
+    rm -f $HOME/.claude/statusline-command.sh
+    ln -s `pwd`/claude/settings.json $HOME/.claude/settings.json
+    ln -s `pwd`/claude/statusline-command.sh $HOME/.claude/statusline-command.sh
+
+    # Blaude config (~/.claude-bacio)
+    mkdir -p $HOME/.claude-bacio
+    rm -f $HOME/.claude-bacio/settings.json
+    rm -f $HOME/.claude-bacio/statusline-command.sh
+    ln -s `pwd`/claude-bacio/settings.json $HOME/.claude-bacio/settings.json
+    ln -s `pwd`/claude/statusline-command.sh $HOME/.claude-bacio/statusline-command.sh
+}
+
 _linux() {
     ln -s `pwd`/Xmodmap $HOME/.Xmodmap
     ln -s `pwd`/xinitrc $HOME/.xinitrc
@@ -54,6 +70,7 @@ all_platforms() {
     _vim
     _bash
     _git
+    _claude
     rm $HOME/.screenrc
     ln -s `pwd`/screenrc $HOME/.screenrc
 }
