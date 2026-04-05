@@ -12,7 +12,7 @@ Personal dotfiles repo for macOS and Linux. Files are symlinked into `$HOME` by 
 ./setup.sh
 ```
 
-Symlinks config files into `$HOME` (`.vimrc`, `.mybashrc`, `.bash_profile` on macOS, `.gitglobalignore`). Vim plugins require a one-time manual install: clone Vundle into `~/.vim/bundle/Vundle.vim`, then run `vim -u ~/.vim/plugins +PluginInstall +qall`.
+Symlinks config files into `$HOME` (`.vimrc`, `.mybashrc`, `.bash_profile` on macOS, `.gitglobalignore`). Automatically clones Vundle and installs vim plugins.
 
 ## Architecture
 
