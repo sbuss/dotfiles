@@ -11,29 +11,6 @@ if hash brew 2> /dev/null; then
     fi
 fi
 
-# if hash brew 2> /dev/null; then
-#     export CLICOLOR=1
-#     export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-# fi
-
-# Python development
-# export PATH=/usr/local/share/python:$PATH
-# export WORKON_HOME=$HOME/envs
-# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-# . /usr/local/share/python/virtualenvwrapper.sh
-# 
-# # Make sure we're using Homebrew's python binary by default
-# export PATH=/usr/local/bin:$PATH
-# # Homebrew npm
-# export PATH=/usr/local/share/npm/bin:$PATH
-# export PATH=/usr/local/lib/node_modules:$PATH
-
-# Ruby
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.2.1
-
-
 # libpq
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
