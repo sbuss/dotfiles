@@ -11,6 +11,13 @@ _vim() {
     mkdir -p $HOME/.vim/undo
     ln -s `pwd`/vim/plugins $HOME/.vim/plugins
     ln -sf `pwd`/vim/colors/*.vim $HOME/.vim/colors/
+
+    mkdir -p $HOME/.vim/bundle
+    local vundle_dest=$HOME/.vim/bundle/Vundle.vim
+    if [[ ! -d $vundle_dest ]]; then
+        git clone https://github.com/VundleVim/Vundle.vim.git $vundle_dest
+    fi
+    vim -u ~/.vim/plugins +PluginInstall +qall
 }
 
 _bash() {
