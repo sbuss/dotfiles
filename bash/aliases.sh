@@ -51,13 +51,13 @@ alias tags="hash -r && ctags -R --python-kinds=-i ."
 # Docker
 alias d="docker"
 alias dr="docker run"
-alias dm="docker-machine"
 
 # Git alias tab completion (requires bash-completion loaded before this file)
 if type __git_complete &>/dev/null; then
     __git_complete gc _git_checkout
     __git_complete gb _git_branch
     __git_complete ga _git_add
+    __git_complete gap _git_add
     __git_complete gp _git_pull
     __git_complete gpr _git_pull
     __git_complete gd _git_diff
