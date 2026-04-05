@@ -19,8 +19,12 @@ _bash() {
         ln -s `pwd`/bash $HOME/.bash
     fi
     ln -s `pwd`/mybashrc $HOME/.mybashrc
-    rm -f $HOME/.bash_profile
-    ln -s `pwd`/bash_profile $HOME/.bash_profile
+    case $(uname -s) in
+      Darwin)
+        rm -f $HOME/.bash_profile
+        ln -s `pwd`/bash_profile $HOME/.bash_profile
+        ;;
+    esac
     if ! grep 'mybashrc' $HOME/.bashrc; then
       echo ". $HOME/.mybashrc" >> $HOME/.bashrc
     fi
