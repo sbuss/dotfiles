@@ -4,10 +4,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Bash completion
 if hash brew 2> /dev/null; then
-    if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+    if [ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
+        . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+    elif [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         . "$(brew --prefix)/etc/bash_completion"
     else
-        echo "bash-completion not found. Install with: brew install bash-completion"
+        echo "bash-completion not found. Install with: brew install bash-completion@2"
     fi
 fi
 
