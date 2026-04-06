@@ -1,5 +1,5 @@
 # Initialize zsh completion system
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 
 # Git alias completion — tells zsh which git subcommand each alias wraps
 compdef _git gc=git-checkout
