@@ -45,13 +45,6 @@ alias whatdidido='git log --all --author=$USER --since=1.weeks --graph --decorat
 # Postgres recovery
 alias restartpostgres="rm /usr/local/var/postgres/postmaster.pid && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 
-# ctags - perform this from project root
-alias tags="hash -r && ctags -R --python-kinds=-i ."
-
-# Docker
-alias d="docker"
-alias dr="docker run"
-
 # Git alias tab completion (requires bash-completion loaded before this file)
 if type __git_complete &>/dev/null; then
     __git_complete gc _git_checkout
