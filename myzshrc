@@ -12,15 +12,14 @@ case $(uname -s) in
 esac
 
 . $ZD/aliases.zsh
+
+# Load gcloud completions before compinit to avoid double initialization
+if [ -f '/Users/sbuss/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sbuss/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/sbuss/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sbuss/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
 . $ZD/completion.zsh
 . $ZD/prompt.zsh
 . $ZD/autosuggestions.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/sbuss/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sbuss/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/sbuss/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sbuss/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="$HOME/.local/bin:$PATH"
 
 alias blaude="CLAUDE_CONFIG_DIR=~/.claude-bacio claude --dangerously-skip-permissions"

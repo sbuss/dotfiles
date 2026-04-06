@@ -29,7 +29,18 @@ if [[ -f $HOME/.bash/api_keys.sh ]]; then
   . $HOME/.bash/api_keys.sh
 fi
 
-# Load nvm
+# Lazy-load nvm (loading eagerly adds ~500ms to shell startup)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    # Add node to PATH without loading nvm fully
+    [ -s "$NVM_DIR/alias/default" ] && PATH="$NVM_DIR/versions/node/$(cat $NVM_DIR/alias/default)/bin:$PATH"
+    _lazy_nvm() {
+        unset -f nvm node npm npx
+        . "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+    }
+    nvm() { _lazy_nvm; nvm "$@"; }
+    node() { _lazy_nvm; node "$@"; }
+    npm() { _lazy_nvm; npm "$@"; }
+    npx() { _lazy_nvm; npx "$@"; }
+fi
