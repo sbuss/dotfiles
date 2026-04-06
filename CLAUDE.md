@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal dotfiles repo for syncing shell, editor, and system config across macOS and Linux machines. Files are symlinked into `$HOME` by `setup.sh`.
+Personal dotfiles repo for macOS and Linux. Files are symlinked into `$HOME` by `setup.sh`.
 
 ## Setup
 
@@ -12,28 +12,31 @@ Personal dotfiles repo for syncing shell, editor, and system config across macOS
 ./setup.sh
 ```
 
-This symlinks all config files into `$HOME` (`.vimrc`, `.mybashrc`, `.bash_profile`, `.screenrc`, `.gitglobalignore`, etc.) and installs Vim plugins via Vundle. On Linux, it also links X11 config (`.xinitrc`, `.Xmodmap`).
+Symlinks config files into `$HOME` (`.vimrc`, `.mybashrc`, `.bash_profile` on macOS, `.gitglobalignore`). Automatically clones Vundle and installs vim plugins.
 
 ## Architecture
 
-- **`setup.sh`** — Entry point. Symlinks everything; runs `all_platforms()` then platform-specific setup. Destructive: removes existing dotfiles before linking.
-- **`mybashrc`** — Main bash config dispatcher. Sources `bash/*.sh` files and platform-specific config based on `uname -s`.
+- **`setup.sh`** — Entry point. Symlinks everything via `_vim`, `_bash`, `_git`, `_claude` functions. Uses `rm -f` then `ln -s` pattern. `bash_profile` is only linked on macOS.
+- **`mybashrc`** — Sources bash config in order: `all_platforms.sh` → `osx.sh` or `linux.sh` (platform-conditional, loads bash-completion) → `aliases.sh` (git aliases + `__git_complete` + `sshc`) → `PS1.sh`. Also loads Google Cloud SDK, direnv, and the `blaude` alias.
 - **`bash/`** — Modular bash config:
-  - `all_platforms.sh` — Cross-platform settings (history search, `git-mop` branch cleanup, editor config)
-  - `aliases.sh` — Git aliases (`gs`, `gc`, `push`, etc.), Docker aliases, `wrap_alias` for tab-completion on aliases
-  - `osx.sh` — Homebrew, chruby (Ruby 3.2.1), libpq, Ghostty, bash-completion
-  - `linux.sh` — Go, CUDA, Google Cloud SDK paths
+  - `all_platforms.sh` — History search, `git-mop` branch cleanup, editor config
+  - `osx.sh` — Homebrew, bash-completion, libpq, Ghostty PATH
+  - `linux.sh` — Bash-completion (Linux path)
+  - `aliases.sh` — Git aliases (`gs`, `gc`, `push`, etc.) with `__git_complete` tab completion, `sshc` function
   - `PS1.sh` — Prompt with git branch display
-- **`bash_profile`** → sources `.bashrc`; `bashrc` → sources `.mybashrc`
+  - `portable.sh` — Self-contained git aliases + prompt, carried to remote machines by `sshc`
 - **`bash/api_keys.sh`** — Gitignored; holds local API keys
+- **`vimrc`** + **`vim/`** — Vim config with arpeggio key chords and solarized colorscheme. Plugins managed by Vundle (arpeggio + solarized only).
 - **`claude/`** — Default Claude Code config (`~/.claude/`):
   - `settings.json` — Symlinked to `~/.claude/settings.json`
-  - `statusline-command.sh` — Symlinked into both `~/.claude/` and `~/.claude-bacio/`. Renders git branch, context usage, and quota bars in the status line.
+  - `statusline-command.sh` — Symlinked into both `~/.claude/` and `~/.claude-bacio/`
 - **`claude-bacio/`** — Blaude config (`~/.claude-bacio/`):
-  - `settings.json` — Symlinked to `~/.claude-bacio/settings.json`. Differs from default (has `effortLevel`, `skipDangerousModePermissionPrompt`).
+  - `settings.json` — Symlinked to `~/.claude-bacio/settings.json`
 
 ## Key Conventions
 
-- Config is split by platform (`osx.sh` vs `linux.sh`) and sourced conditionally via `uname -s`.
-- Two Claude Code configs: default (`~/.claude/`) for work, personal (`~/.claude-bacio/`) via the `blaude` alias in `mybashrc` (`CLAUDE_CONFIG_DIR=~/.claude-bacio`).
+- Platform config is split by OS (`osx.sh` vs `linux.sh`) and sourced conditionally via `uname -s` in `mybashrc`.
+- Source order matters: platform file (bash-completion) must load before `aliases.sh` (`__git_complete`).
+- Two Claude Code configs: default (`~/.claude/`) for work, personal (`~/.claude-bacio/`) via the `blaude` alias (`CLAUDE_CONFIG_DIR=~/.claude-bacio`).
 - `git-mop` (in `all_platforms.sh`) cleans merged branches; use `-c` flag to actually delete (dry-run by default).
+- `sshc` carries `portable.sh` (git aliases + prompt) to remote machines via base64 encoding. Use like `ssh`: `sshc user@host`.
