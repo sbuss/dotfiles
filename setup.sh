@@ -31,19 +31,10 @@ _bash() {
         rm -f $HOME/.bash_profile
         ln -s `pwd`/bash_profile $HOME/.bash_profile
 
-        # Use Homebrew bash + bash-completion@2
+        # Install bash-completion if missing
         if hash brew 2>/dev/null; then
-            brew list bash-completion@2 &>/dev/null || brew install bash-completion@2
-            local brew_bash=/opt/homebrew/bin/bash
-            if [ -x "$brew_bash" ]; then
-                if ! grep -q "$brew_bash" /etc/shells; then
-                    echo "$brew_bash is not in /etc/shells. Run:"
-                    echo "  sudo sh -c 'echo $brew_bash >> /etc/shells'"
-                fi
-                if [ "$SHELL" != "$brew_bash" ]; then
-                    echo "Login shell is $SHELL, not $brew_bash. Run:"
-                    echo "  chsh -s $brew_bash"
-                fi
+            if ! brew list bash-completion &>/dev/null && ! brew list bash-completion@2 &>/dev/null; then
+                brew install bash-completion
             fi
         fi
         ;;

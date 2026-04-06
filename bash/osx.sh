@@ -9,7 +9,7 @@ if hash brew 2> /dev/null; then
     elif [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         . "$(brew --prefix)/etc/bash_completion"
     else
-        echo "bash-completion not found. Install with: brew install bash-completion@2"
+        echo "bash-completion not found. Install with: brew install bash-completion"
     fi
 fi
 
