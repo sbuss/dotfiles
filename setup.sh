@@ -66,7 +66,23 @@ _claude() {
     ln -s `pwd`/claude/statusline-command.sh $HOME/.claude-bacio/statusline-command.sh
 }
 
+_zsh() {
+    rm -f $HOME/.myzshrc
+    if [[ ! -d $HOME/.zsh ]]; then
+        ln -s `pwd`/zsh $HOME/.zsh
+    fi
+    ln -s `pwd`/myzshrc $HOME/.myzshrc
+    if [ -f $HOME/.zshrc ]; then
+        if ! grep 'myzshrc' $HOME/.zshrc 2>/dev/null; then
+            echo ". $HOME/.myzshrc" >> $HOME/.zshrc
+        fi
+    else
+        echo ". $HOME/.myzshrc" > $HOME/.zshrc
+    fi
+}
+
 _vim
 _bash
 _git
 _claude
+_zsh
