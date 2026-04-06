@@ -1,1 +1,40 @@
-Just my config files. A good way to keep these in sync across systems.
+# dotfiles
+
+Personal dotfiles for macOS and Linux. Zsh is the default shell; bash config is kept for remote sessions via `sshc` and as legacy fallback.
+
+## Setup
+
+```bash
+git clone git@github.com:sbuss/dotfiles.git ~/workspace/dotfiles
+cd ~/workspace/dotfiles
+./setup.sh
+```
+
+`setup.sh` symlinks everything into `$HOME` and installs Vim plugins via Vundle. Safe to re-run.
+
+## What's included
+
+**Zsh** (default shell) — `myzshrc` sources modular config from `zsh/`:
+- `all_platforms.zsh` — history search, `git-mop` branch cleanup, editor config
+- `osx.zsh` / `linux.zsh` — platform-specific PATH and tools
+- `aliases.zsh` — git aliases (`gs`, `gc`, `gd`, `push`, etc.) and `sshc`
+- `completion.zsh` — tab completion with `compdef` for git aliases
+- `prompt.zsh` — prompt with git branch display
+
+**Bash** (legacy + remote) — `mybashrc` sources from `bash/`:
+- `portable.sh` — self-contained git aliases + prompt, carried to remote machines by `sshc`
+- Platform-specific files mirror the zsh structure
+
+**Vim** — `vimrc` with arpeggio key chords and solarized colorscheme. Plugins managed by Vundle.
+
+**Git** — global ignore file (`gitglobalignore`)
+
+**Claude Code** — two configs symlinked:
+- `~/.claude/` — default (work)
+- `~/.claude-bacio/` — personal, via the `blaude` alias
+
+## Key tools
+
+- **`sshc`** — like `ssh` but carries `portable.sh` (git aliases + prompt) to the remote machine via base64 encoding. Usage: `sshc user@host`
+- **`git-mop`** — cleans up merged git branches. Dry-run by default; pass `-c` to actually delete.
+- **`blaude`** — runs Claude Code with the personal config dir (`~/.claude-bacio/`)
