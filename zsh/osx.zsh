@@ -1,5 +1,13 @@
+# Colorize ls and set file-type colors
+export CLICOLOR=1
+export LSCOLORS="GxFxCxDxBxegedabagaced"
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# coreutils to replace ls and others
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+alias ls="ls --color=auto"
 
 # libpq
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
