@@ -34,13 +34,13 @@ export NVM_DIR="$HOME/.nvm"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
     # Add node to PATH without loading nvm fully
     [ -s "$NVM_DIR/alias/default" ] && PATH="$NVM_DIR/versions/node/$(cat $NVM_DIR/alias/default)/bin:$PATH"
-    _lazy_nvm() {
+    lazy_nvm() {
         unset -f nvm node npm npx
         . "$NVM_DIR/nvm.sh"
         [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
     }
-    nvm() { _lazy_nvm; nvm "$@"; }
-    node() { _lazy_nvm; node "$@"; }
-    npm() { _lazy_nvm; npm "$@"; }
-    npx() { _lazy_nvm; npx "$@"; }
+    nvm() { lazy_nvm; nvm "$@"; }
+    node() { lazy_nvm; node "$@"; }
+    npm() { lazy_nvm; npm "$@"; }
+    npx() { lazy_nvm; npx "$@"; }
 fi
