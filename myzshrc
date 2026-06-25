@@ -28,3 +28,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias blaude="CLAUDE_CONFIG_DIR=~/.claude-bacio claude --dangerously-skip-permissions"
 eval "$(direnv hook zsh)"
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
