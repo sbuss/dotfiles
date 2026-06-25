@@ -29,18 +29,36 @@ if [[ -f $HOME/.bash/api_keys.sh ]]; then
   . $HOME/.bash/api_keys.sh
 fi
 
-# Lazy-load nvm (loading eagerly adds ~500ms to shell startup)
+# nvm: keep shell startup fast (sourcing nvm.sh eagerly adds ~500ms).
+# prepend_default_node_to_path puts the default node version's real bin/ on
+# PATH, so node, npm, npx, pnpm, yarn and corepack all resolve without ever
+# sourcing nvm. It's called from .myzshrc *after* the platform files so it wins
+# over Homebrew's node. nvm itself stays lazy; it's only needed to *switch*
+# node versions.
 export NVM_DIR="$HOME/.nvm"
+
+prepend_default_node_to_path() {
+    [ -s "$NVM_DIR/nvm.sh" ] || return
+    # Resolve the default alias to a concrete version dir. The alias usually
+    # holds "node" or "lts/*" (meaning "latest"), which isn't itself a dir, so
+    # fall back to the highest installed version (zsh-native version sort).
+    local ver
+    local -a dirs
+    ver=$([ -r "$NVM_DIR/alias/default" ] && cat "$NVM_DIR/alias/default")
+    if [ -z "$ver" ] || [ ! -d "$NVM_DIR/versions/node/$ver/bin" ]; then
+        dirs=( "$NVM_DIR"/versions/node/*(/N:t) )
+        ver=${${(On)dirs}[1]}
+    fi
+    [ -n "$ver" ] && [ -d "$NVM_DIR/versions/node/$ver/bin" ] &&
+        PATH="$NVM_DIR/versions/node/$ver/bin:$PATH"
+}
+
+# nvm stays lazy: source it only when `nvm` is actually invoked.
 if [ -s "$NVM_DIR/nvm.sh" ]; then
-    # Add node to PATH without loading nvm fully
-    [ -s "$NVM_DIR/alias/default" ] && PATH="$NVM_DIR/versions/node/$(cat $NVM_DIR/alias/default)/bin:$PATH"
-    lazy_nvm() {
-        unset -f nvm node npm npx
+    nvm() {
+        unset -f nvm
         . "$NVM_DIR/nvm.sh"
         [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+        nvm "$@"
     }
-    nvm() { lazy_nvm; nvm "$@"; }
-    node() { lazy_nvm; node "$@"; }
-    npm() { lazy_nvm; npm "$@"; }
-    npx() { lazy_nvm; npx "$@"; }
 fi
