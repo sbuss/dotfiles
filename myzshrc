@@ -11,6 +11,10 @@ case $(uname -s) in
     ;;
 esac
 
+# Put nvm's default node ahead of Homebrew's node (added by osx.zsh above), so
+# node/npm/npx/pnpm/yarn/corepack all come from the same nvm-managed version.
+prepend_default_node_to_path
+
 . $ZD/aliases.zsh
 
 # Load gcloud completions before compinit to avoid double initialization
