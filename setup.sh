@@ -51,18 +51,18 @@ _git() {
 }
 
 _claude() {
+    # Only the statusline script is tracked. settings.json is intentionally
+    # NOT managed here: Claude Code rewrites it at runtime (auto mode writes
+    # per-repo trust context into it), so it stays a plain local file.
+
     # Default claude config (~/.claude)
     mkdir -p $HOME/.claude
-    rm -f $HOME/.claude/settings.json
     rm -f $HOME/.claude/statusline-command.sh
-    ln -s `pwd`/claude/settings.json $HOME/.claude/settings.json
     ln -s `pwd`/claude/statusline-command.sh $HOME/.claude/statusline-command.sh
 
     # Blaude config (~/.claude-bacio)
     mkdir -p $HOME/.claude-bacio
-    rm -f $HOME/.claude-bacio/settings.json
     rm -f $HOME/.claude-bacio/statusline-command.sh
-    ln -s `pwd`/claude-bacio/settings.json $HOME/.claude-bacio/settings.json
     ln -s `pwd`/claude/statusline-command.sh $HOME/.claude-bacio/statusline-command.sh
 }
 

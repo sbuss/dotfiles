@@ -29,7 +29,7 @@ cd ~/workspace/dotfiles
 
 **Git** — global ignore file (`gitglobalignore`)
 
-**Claude Code** — two configs symlinked:
+**Claude Code** — the statusline script is symlinked into both config dirs; `settings.json` is intentionally not tracked (Claude Code rewrites it at runtime):
 - `~/.claude/` — default (work)
 - `~/.claude-bacio/` — personal, via the `blaude` alias
 

@@ -31,11 +31,9 @@ Symlinks config files into `$HOME` (`.vimrc`, `.myzshrc`, `.mybashrc`, `.bash_pr
   - `all_platforms.sh`, `osx.sh`, `linux.sh`, `aliases.sh`, `PS1.sh` — Legacy bash equivalents
 - **`bash/api_keys.sh`** — Gitignored; holds local API keys
 - **`vimrc`** + **`vim/`** — Vim config with arpeggio key chords and solarized colorscheme. Plugins managed by Vundle (arpeggio + solarized only).
-- **`claude/`** — Default Claude Code config (`~/.claude/`):
-  - `settings.json` — Symlinked to `~/.claude/settings.json`
+- **`claude/`** — Claude Code bits shared by both configs:
   - `statusline-command.sh` — Symlinked into both `~/.claude/` and `~/.claude-bacio/`
-- **`claude-bacio/`** — Blaude config (`~/.claude-bacio/`):
-  - `settings.json` — Symlinked to `~/.claude-bacio/settings.json`
+  - `settings.json` is deliberately **not** tracked: Claude Code rewrites it at runtime (auto mode injects per-repo trust context), so it lives as a plain file in `~/.claude/` and `~/.claude-bacio/`.
 
 ## Key Conventions
 
