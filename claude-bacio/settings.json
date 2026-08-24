@@ -3,7 +3,12 @@
     "allow": [
       "Bash(gh pr:*)"
     ],
-    "defaultMode": "default"
+    "defaultMode": "auto"
+  },
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/sbuss/.claude-bacio/statusline-command.sh"
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
@@ -11,11 +16,12 @@
     "serena@claude-plugins-official": false
   },
   "syntaxHighlightingDisabled": false,
+  "effortLevel": "xhigh",
   "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "high",
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/sbuss/.claude-bacio/statusline-command.sh"
-  }
+  "skipWorkflowUsageWarning": true,
+  "theme": "light",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true
 }
